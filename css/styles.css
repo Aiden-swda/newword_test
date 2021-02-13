@@ -2907,6 +2907,13 @@ fieldset:disabled a.btn {
   border-radius: 0.25rem;
 }
 
+.btn-custom, .btn-group-custom > .btn {
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.75rem;
+}
+
 .btn-block {
   display: block;
   width: 100%;
@@ -10080,6 +10087,7 @@ h3 {
   padding: 0.8rem;
 }
 
+
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 1.5rem;
@@ -10237,4 +10245,12 @@ form .row:first-child .floating-label-form-group {
 
 .copyright {
   background-color: #1a252f;
+}
+
+.outdiv {
+	text-align:center
+}
+
+.indiv {
+	display:inline-block
 }
