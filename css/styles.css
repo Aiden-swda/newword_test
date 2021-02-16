@@ -10285,7 +10285,6 @@ form .row:first-child .floating-label-form-group {
 }
 
 .box-radio-input input[type="radio"]:checked + span{
-  border:1px solid #23a3a7;
   background:#f8f9fa;
   color:#212529;
 }
