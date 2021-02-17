@@ -170,7 +170,7 @@
 				</div>
 				<div class="container mt-5 pt-5 col-md-6 col-lg-4">
 					<div class="text-center mb-3">
-						<h1>
+						<h1 id>
 							억텐
 						</h1>
 					</div>
@@ -224,6 +224,11 @@
                     </div>
 				</div>
 				</div>
+				<div class="text-center mt-5 pt-5">
+                    <a class="btn btn-xl btn-outline-light js-scroll-trigger" id="btn_result">
+                     결과보기
+                    </a>
+                </div>
             </div>
         </section>
         <!-- Contact Section
@@ -532,5 +537,50 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+		<script>
+			//라디오버튼 체크여부 확인 스크립트
+			
+			$("#btn_result").on("click", function() {
+			var radios = $(":radio[value='YES']");
+			var radios2 = $(":radio[value='NO']");
+			for(var i = 0; i < radios.length; i++) {
+				var $this = $(radios[i]);
+				var $this2 = $(radios2[i]);
+				if(!$this.is(":checked") && !$this2.is(":checked")) { 
+				alert('선택하지 않은 항목이 있습니다.');
+				$this.focus();
+				return;
+				}
+			}
+			if($('input:radio[name=item1]').is(':checked') && $('input:radio[name=item2]').is(':checked') && $('input:radio[name=item3]').is(':checked') && $('input:radio[name=item4]').is(':checked') && $('input:radio[name=item5]').is(':checked') && $('input:radio[name=item6]').is(':checked') && $('input:radio[name=item7]').is(':checked')){
+				var YES_checked = $(":radio[value='YES']");
+				var YES_count = 0;
+				for (var i=0; i<YES_checked.length; i++){
+					var $this_YES = $(YES_checked[i]);
+					if($this_YES.is(":checked")){
+						YES_count++;
+						console.log("성공");
+					}
+				}
+				// YES_count는 맞은 개수 담은 변수입니다. 이거 활용하시면 됩니다. 
+				// 이 부분에 추가할 동작은 제가 하겠습니다. (YES라고 답한 개수에 따라 각각 다른 코멘트 출력되도록) 
+				// 준혁님이 해주실 동작은 화면이 새로고침 되면 라디오버튼 위에 있는 단어들을 배열에 있는 단어들로 교체해주는(랜덤하게) 동작을 구현해주시면 됩니다.
+				
+				
+				
+				
+				alert('결과'+YES_count);
+				if(0<=YES_count<=3){
+					location.href="type1.html"
+				}
+				
+				
+				
+				
+				
+				}
+								
+			});
+		</script>
     </body>
 </html>
