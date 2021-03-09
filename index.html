@@ -538,8 +538,28 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 		<script>
-			//라디오버튼 체크여부 확인 스크립트
 			
+			//무작위 뿌리기
+			let form = document.getElementsByClassName("text-center mb-3");
+			console.log(form);
+			
+			let new_words = ['레게노', '쫌쫌다리', '완내스', 'Whyrano', '억텐', '임포', '머선129'];
+			
+			var choice = (lists) => Math.floor(Math.random() * lists.length);
+			
+			for (var i = 0; i <7; i++) {
+				
+				var word = new_words[choice(new_words)];
+				
+				var pos = new_words.indexOf(word);
+				
+				new_words.splice(pos, 1);
+				console.log(1);
+				form[i].innerText = word;
+			}
+			
+			
+			//라디오버튼 체크여부 확인 스크립트
 			$("#btn_result").on("click", function() {
 			var radios = $(":radio[value='YES']");
 			var radios2 = $(":radio[value='NO']");
